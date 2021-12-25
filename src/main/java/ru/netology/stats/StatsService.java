@@ -44,8 +44,8 @@ public class StatsService {
     }
 
     public int calcSalesBellowAvrg(int[] sales) {
-        int avr = 15;
         int month = 0;
+        int avr = calcAverage(sales);
         for (int sale : sales) {
             if (sale < avr) {
                 month = month + 1;
@@ -55,7 +55,7 @@ public class StatsService {
     }
 
     public int calcSalesAboveAvrg(int[] sales) {
-        int avr = 15;
+        int avr = calcAverage(sales);
         int month = 0;
         for (int sale : sales) {
             if (sale > avr) {
